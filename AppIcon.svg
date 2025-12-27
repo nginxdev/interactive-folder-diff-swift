@@ -1,0 +1,93 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Background Gradient: Deep "Pro" Dark Mode base -->
+        <linearGradient id="bgGradient" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#2c3e50"/>
+            <stop offset="1" stop-color="#000000"/>
+        </linearGradient>
+        
+        <!-- Folder Gradients: Vibrant and glassy -->
+        <linearGradient id="folderLeftGradient" x1="200" y1="300" x2="500" y2="800" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#3a7bd5"/>
+            <stop offset="1" stop-color="#00d2ff"/>
+        </linearGradient>
+        
+        <linearGradient id="folderRightGradient" x1="500" y1="300" x2="800" y2="800" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#ee0979"/>
+            <stop offset="1" stop-color="#ff6a00"/>
+        </linearGradient>
+        
+        <!-- Paper/Code Gradient -->
+        <linearGradient id="paperGradient" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+            <stop stop-color="#ffffff"/>
+            <stop offset="1" stop-color="#f0f2f5"/>
+        </linearGradient>
+
+        <!-- Shadows -->
+        <filter id="deepShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="20"/>
+            <feOffset dx="0" dy="25"/>
+            <feComponentTransfer><feFuncA type="linear" slope="0.5"/></feComponentTransfer>
+            <feMerge> 
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/> 
+            </feMerge>
+        </filter>
+        
+        <filter id="glassShadow" x="-20%" y="-20%" width="140%" height="140%">
+             <feGaussianBlur in="SourceAlpha" stdDeviation="15"/>
+             <feOffset dx="0" dy="10"/>
+             <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+             <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+    </defs>
+
+    <!-- 1. App Icon Base (Full Bleed Square - macOS handles masking) -->
+    <rect width="1024" height="1024" fill="url(#bgGradient)"/>
+
+    <!-- 2. Content Group -->
+    <g transform="translate(0, 50)">
+    
+        <!-- LEFT FOLDER (Source) -->
+        <g filter="url(#deepShadow)" transform="translate(130, 150) rotate(-5)">
+            <!-- Back Tab -->
+            <path d="M0 50 H150 L200 100 H400 V400 H0 V50 Z" fill="#205a9e"/>
+            <!-- Paper Sheet (Code File) -->
+            <rect x="30" y="20" width="340" height="380" fill="url(#paperGradient)" rx="5"/>
+            <!-- Code Lines: Left -->
+            <rect x="60" y="60" width="100" height="15" rx="7.5" fill="#e0e0e0"/>
+            <rect x="60" y="100" width="200" height="15" rx="7.5" fill="#e0e0e0"/>
+            <rect x="60" y="140" width="160" height="15" rx="7.5" fill="#e0e0e0"/>
+            <rect x="60" y="180" width="180" height="15" rx="7.5" fill="#e0e0e0"/>
+            <!-- Front Cover -->
+            <path d="M0 200 H400 V500 C400 522 382 540 360 540 H40 C18 540 0 522 0 500 V200 Z" fill="url(#folderLeftGradient)"/>
+            <path d="M0 200 H400 V220 H0 V200 Z" fill="white" fill-opacity="0.2"/> <!-- Highlight -->
+        </g>
+        
+        <!-- RIGHT FOLDER (Target/Diff) -->
+        <g filter="url(#deepShadow)" transform="translate(494, 150) rotate(5)">
+             <!-- Back Tab -->
+            <path d="M0 50 H150 L200 100 H400 V400 H0 V50 Z" fill="#c0392b"/>
+            <!-- Paper Sheet (Code File) -->
+            <rect x="30" y="20" width="340" height="380" fill="url(#paperGradient)" rx="5"/>
+            <!-- Code Lines: Right (Some diff colors) -->
+            <rect x="60" y="60" width="100" height="15" rx="7.5" fill="#e0e0e0"/>
+            <rect x="60" y="100" width="200" height="15" rx="7.5" fill="#ffcfcf"/> <!-- Red diff -->
+            <rect x="60" y="140" width="180" height="15" rx="7.5" fill="#dfffdf"/> <!-- Green diff -->
+            <rect x="60" y="180" width="180" height="15" rx="7.5" fill="#e0e0e0"/>
+            <!-- Front Cover -->
+            <path d="M0 200 H400 V500 C400 522 382 540 360 540 H40 C18 540 0 522 0 500 V200 Z" fill="url(#folderRightGradient)"/>
+             <path d="M0 200 H400 V220 H0 V200 Z" fill="white" fill-opacity="0.2"/> <!-- Highlight -->
+        </g>
+        
+    </g>
+
+    <!-- 3. Central Glass Sync Badge -->
+    <g filter="url(#glassShadow)" transform="translate(512, 512)">
+        <!-- Glass Circle -->
+        <circle cx="0" cy="0" r="100" fill="white" fill-opacity="0.15" stroke="white" stroke-opacity="0.4" stroke-width="2"/>
+        <!-- Arrow Ring Background -->
+        <circle cx="0" cy="0" r="70" fill="white" fill-opacity="1"/>
+    </g>
+    
+</svg>
