@@ -8,12 +8,6 @@ A beautiful, native macOS application for comparing and synchronizing folders wi
 
 ---
 
-## 📸 Screenshot
-
-![Interactive Folder Diff App](resources/app-screenshot.png)
-
----
-
 ## ✨ Features
 
 ### 🔍 **Smart Comparison**
@@ -40,6 +34,10 @@ A beautiful, native macOS application for comparing and synchronizing folders wi
 - Responsive layout
 - Smooth animations
 - Material effects
+
+## 📸 App
+
+![Interactive Folder Diff App](resources/app-screenshot.png)
 
 ---
 
@@ -240,8 +238,6 @@ Select from three view modes using the segmented control in the sidebar:
 - Rescans both folders and updates the comparison
 
 ---
-
-### 7️⃣ **Keyboard Shortcuts**
 
 | Shortcut | Action |
 |----------|--------|
